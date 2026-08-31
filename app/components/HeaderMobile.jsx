@@ -92,7 +92,7 @@ export default function HeaderMobile() {
           position: sticky;
           top: 0;
           width: 100%;
-          height: 90px;
+          height: 65px;
           background: #ffffff;
           z-index: 100;
           border-bottom: 1px solid #f1f5f9;
@@ -110,7 +110,7 @@ export default function HeaderMobile() {
 
         .mobile-logo {
           font-family: var(--font-cp-bold), sans-serif;
-          font-size: 28px;
+          font-size: 22px;
           font-weight: 900;
           color: #d6336c;
           text-decoration: none;
@@ -123,7 +123,7 @@ export default function HeaderMobile() {
           flex-direction: column;
           justify-content: space-between;
           width: 28px;
-          height: 18px;
+          height: 15px;
           background: transparent;
           border: none;
           cursor: pointer;
@@ -141,7 +141,7 @@ export default function HeaderMobile() {
 
         .mobile-menu-overlay {
           position: fixed;
-          top: 90px;
+          top: 65px;
           left: 0;
           width: 100vw;
           height: calc(100vh - 90px);

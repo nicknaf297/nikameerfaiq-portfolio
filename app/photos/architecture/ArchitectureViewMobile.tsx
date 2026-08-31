@@ -10,12 +10,9 @@ interface SubCategory {
   coverImage: string;
 }
 
-const eventSubCategories: SubCategory[] = [
-  { id: 'concert', title: 'CONCERTS', coverImage: '/img/photos_page/Events/concert_cover.webp' },
-  { id: 'weddings', title: 'WEDDINGS', coverImage: '/img/photos_page/Events/weddings_cover.webp' },
-  { id: 'graduation', title: 'GRADUATION', coverImage: '/img/photos_page/Events/graduation_cover.webp' },
-  { id: 'sports', title: 'SPORTS', coverImage: '/img/photos_page/Events/sports_cover.webp' },
-  { id: 'community', title: 'COMMUNITY EVENTS', coverImage: '/img/photos_page/Events/community_cover.webp' },
+const architectureSubCategories: SubCategory[] = [
+  { id: 'srisendayan', title: 'MASJID SRI SENDAYAN', coverImage: '/img/photos_page/Architecture/srisendayan_cover.webp' },
+  { id: 'kl', title: 'KUALA LUMPUR', coverImage: '/img/photos_page/Architecture/kl_cover.webp' },
 ];
 
 const smoothEase = [0.4, 0.4, 0.6, 1] as const;
@@ -37,12 +34,12 @@ const itemVariants: Variants = {
   },
 };
 
-export default function EventsViewMobile() {
+export default function ArchitectureViewMobile() {
   return (
     <div
       style={{
         width: '100%',
-        minHeight: 'calc(100vh - 65px)',
+        minHeight: 'calc(100vh - 60px)',
         padding: '16px 20px 40px 20px',
         boxSizing: 'border-box',
         display: 'flex',
@@ -50,13 +47,12 @@ export default function EventsViewMobile() {
       }}
     >
       <PageHeader
-        title="EVENTS GALLERY"
+        title="ARCHITECTURE GALLERY"
         backHref="/photos"
         backText="BACK TO MAIN PAGE"
         smoothEase={smoothEase}
       />
 
-      {/* SINGLE COLUMN MOBILE STACK WITH EXPLICIT GAP */}
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -64,17 +60,17 @@ export default function EventsViewMobile() {
         style={{
           display: 'flex',
           flexDirection: 'column',
-          gap: '20px', /* Creates spacing between each card */
+          gap: '20px',
           width: '100%',
-          marginTop: '24px', /* Creates breathing room below the page header */
+          marginTop: '24px',
         }}
       >
-        {eventSubCategories.map((sub) => (
-          <div 
-            key={sub.id} 
-            style={{ 
-              width: '100%', 
-              height: '180px', 
+        {architectureSubCategories.map((sub) => (
+          <div
+            key={sub.id}
+            style={{
+              width: '100%',
+              height: '200px',
               position: 'relative',
               borderRadius: '10px',
               overflow: 'hidden',
@@ -84,7 +80,7 @@ export default function EventsViewMobile() {
               id={sub.id}
               title={sub.title}
               coverImage={sub.coverImage}
-              baseHref="/photos/events"
+              baseHref="/photos/architecture"
               variants={itemVariants}
               smoothEase={smoothEase}
             />

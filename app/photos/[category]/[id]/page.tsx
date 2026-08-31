@@ -109,10 +109,8 @@ export default function UniversalGalleryPage({
   const categoryParam = resolvedParams.category.toLowerCase();
   const idParam = resolvedParams.id.toLowerCase();
 
-  // Retrieve matching image paths directly from manifest.json
   const galleryImages: string[] = (manifest as Record<string, string[]>)[idParam] || [];
 
-  // Retrieve metadata or generate fallbacks dynamically
   const details: SubCategoryMeta = subCategoryMetadata[idParam] || {
     title: idParam.toUpperCase(),
     description: 'Photo gallery collection.',
@@ -121,34 +119,71 @@ export default function UniversalGalleryPage({
   };
 
   return (
-    <div style={{ width: '100%', padding: '24px 50px 60px 50px', boxSizing: 'border-box' }}>
-      <PageHeader
-        title={details.title}
-        backHref={details.parentHref}
-        backText={details.parentLabel}
-        smoothEase={smoothEase}
-      />
+    <div className="gallery-page-root">
+      <div className="gallery-max-wrapper">
+        <PageHeader
+          title={details.title}
+          backHref={details.parentHref}
+          backText={details.parentLabel}
+          smoothEase={smoothEase}
+        />
 
-      <p className="body_text" style={{ fontSize: '15px', color: '#6b7280', marginTop: '-16px', marginBottom: '32px' }}>
-        {details.description}
-      </p>
+        <p className="body_text gallery-sub-desc">
+          {details.description}
+        </p>
 
-      {/* 4-COLUMN MASONRY PHOTO GRID */}
-      <MasonryGrid
-        images={galleryImages}
-        categoryTitle={details.title}
-        onSelectImage={(index) => setSelectedIndex(index)}
-        columns={4}
-      />
+        <MasonryGrid
+          images={galleryImages}
+          categoryTitle={details.title}
+          onSelectImage={(index) => setSelectedIndex(index)}
+        />
 
-      {/* FULL-SCREEN LIGHTBOX OVERLAY */}
-      <LightboxModal
-        selectedIndex={selectedIndex}
-        images={galleryImages}
-        categoryId={idParam}
-        onClose={() => setSelectedIndex(null)}
-        onNavigate={(newIndex) => setSelectedIndex(newIndex)}
-      />
+        <LightboxModal
+          selectedIndex={selectedIndex}
+          images={galleryImages}
+          categoryId={idParam}
+          onClose={() => setSelectedIndex(null)}
+          onNavigate={(newIndex) => setSelectedIndex(newIndex)}
+        />
+      </div>
+
+      <style jsx>{`
+        .gallery-page-root {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          box-sizing: border-box;
+        }
+
+        .gallery-max-wrapper {
+          width: 100%;
+          max-width: 1400px;
+          padding: 24px 40px 60px 40px;
+          box-sizing: border-box;
+        }
+
+        /* 🧼 CLEANED SUBTEXT MARGINS & LINE HEIGHT */
+        .gallery-sub-desc {
+          font-size: 15px;
+          color: #6b7280;
+          margin-top: 6px;
+          margin-bottom: 28px;
+          line-height: 1.4;
+          padding: 0;
+        }
+
+        @media (max-width: 868px) {
+          .gallery-max-wrapper {
+            padding: 16px 12px 40px 12px;
+          }
+
+          .gallery-sub-desc {
+            font-size: 13px;
+            margin-top: 4px;
+            margin-bottom: 16px;
+          }
+        }
+      `}</style>
     </div>
   );
 }
