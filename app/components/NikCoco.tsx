@@ -30,10 +30,10 @@ export default function NikCoco() {
                     </li>
                   </ul>
                   <div className="center_horizontal_container" style={{ justifyContent: "center", gap: "16px", flexWrap: "wrap" }}>
-                    <img src="/img/pdr1.jpg" style={{ width: '45%', borderRadius: '4px' }} alt="pdr" />
-                    <img src="/img/pdr2.jpg" style={{ width: '45%', borderRadius: '4px' }} alt="pdr" />
-                    <img src="/img/pdr3.jpg" style={{ width: '45%', borderRadius: '4px' }} alt="pdr" />
-                    <img src="/img/pdr4.jpg" style={{ width: '45%', borderRadius: '4px' }} alt="pdr" />
+                    <img src="/img/nik_page/pdr1.jpg" style={{ width: '45%', borderRadius: '4px' }} alt="pdr" />
+                    <img src="/img/nik_page/pdr2.jpg" style={{ width: '45%', borderRadius: '4px' }} alt="pdr" />
+                    <img src="/img/nik_page/pdr3.jpg" style={{ width: '45%', borderRadius: '4px' }} alt="pdr" />
+                    <img src="/img/nik_page/pdr4.jpg" style={{ width: '45%', borderRadius: '4px' }} alt="pdr" />
                   </div>
                 </div>
               }
@@ -61,10 +61,10 @@ export default function NikCoco() {
                     </li>
                   </ul>
                   <div className="center_horizontal_container" style={{ justifyContent: "center", gap: "16px", flexWrap: "wrap" }}>
-                    <img src="/img/pahang1.jpg" style={{ width: '45%', borderRadius: '4px' }} alt="pahang" />
-                    <img src="/img/pahang2.jpg" style={{ width: '45%', borderRadius: '4px' }} alt="pahang" />
-                    <img src="/img/pahang3.jpg" style={{ width: '45%', borderRadius: '4px' }} alt="pahang" />
-                    <img src="/img/pahang4.jpg" style={{ width: '45%', borderRadius: '4px' }} alt="pahang" />
+                    <img src="/img/nik_page/pahang1.jpg" style={{ width: '45%', borderRadius: '4px' }} alt="pahang" />
+                    <img src="/img/nik_page/pahang2.jpg" style={{ width: '45%', borderRadius: '4px' }} alt="pahang" />
+                    <img src="/img/nik_page/pahang3.jpg" style={{ width: '45%', borderRadius: '4px' }} alt="pahang" />
+                    <img src="/img/nik_page/pahang4.jpg" style={{ width: '45%', borderRadius: '4px' }} alt="pahang" />
                   </div>
                 </div>
               }
@@ -95,8 +95,8 @@ export default function NikCoco() {
                     </li>
                   </ul>
                   <div className="center_horizontal_container" style={{ justifyContent: "center", gap: "16px", flexWrap: "wrap" }}>
-                    <img src="/img/kelantan1.webp" style={{ width: '45%', borderRadius: '4px' }} alt="kelantan" />
-                    <img src="/img/kelantan2.webp" style={{ width: '45%', borderRadius: '4px' }} alt="kelantan" />
+                    <img src="/img/nik_page/kelantan1.webp" style={{ width: '45%', borderRadius: '4px' }} alt="kelantan" />
+                    <img src="/img/nik_page/kelantan2.webp" style={{ width: '45%', borderRadius: '4px' }} alt="kelantan" />
                   </div>
                 </div>
               }
@@ -123,10 +123,10 @@ export default function NikCoco() {
                     </li>
                   </ul>
                   <div className="center_horizontal_container" style={{ justifyContent: "center", gap: "16px", flexWrap: "wrap" }}>
-                    <img src="/img/n93.jpg" style={{ width: '45%', borderRadius: '4px' }} alt="perdanaN9" />
-                    <img src="/img/n94.jpg" style={{ width: '45%', borderRadius: '4px' }} alt="perdanaN9" />
-                    <img src="/img/n92.jpg" style={{ width: '45%', borderRadius: '4px' }} alt="perdanaN9" />
-                    <img src="/img/n91.jpg" style={{ width: '45%', borderRadius: '4px' }} alt="perdanaN9" />
+                    <img src="/img/nik_page/n93.jpg" style={{ width: '45%', borderRadius: '4px' }} alt="perdanaN9" />
+                    <img src="/img/nik_page/n94.jpg" style={{ width: '45%', borderRadius: '4px' }} alt="perdanaN9" />
+                    <img src="/img/nik_page/n92.jpg" style={{ width: '45%', borderRadius: '4px' }} alt="perdanaN9" />
+                    <img src="/img/nik_page/n91.jpg" style={{ width: '45%', borderRadius: '4px' }} alt="perdanaN9" />
                   </div>
                 </div>
               }
@@ -152,10 +152,10 @@ export default function NikCoco() {
                     </li>
                   </ul>
                   <div className="center_horizontal_container" style={{ justifyContent: "center", gap: "16px", flexWrap: "wrap" }}>
-                    <img src="/img/melaka1.jpg" style={{ width: '45%', borderRadius: '4px' }} alt="melaka" />
-                    <img src="/img/melaka2.jpg" style={{ width: '45%', borderRadius: '4px' }} alt="melaka" />
-                    <img src="/img/melaka3.png" style={{ width: '45%', borderRadius: '4px' }} alt="melaka" />
-                    <img src="/img/melaka4.png" style={{ width: '45%', borderRadius: '4px' }} alt="melaka" />
+                    <img src="/img/nik_page/melaka1.jpg" style={{ width: '45%', borderRadius: '4px' }} alt="melaka" />
+                    <img src="/img/nik_page/melaka2.jpg" style={{ width: '45%', borderRadius: '4px' }} alt="melaka" />
+                    <img src="/img/nik_page/melaka3.png" style={{ width: '45%', borderRadius: '4px' }} alt="melaka" />
+                    <img src="/img/nik_page/melaka4.png" style={{ width: '45%', borderRadius: '4px' }} alt="melaka" />
                   </div>
                 </div>
               }
@@ -178,7 +178,7 @@ export default function NikCoco() {
                     </li>
                   </ul>
                   <div className="center_horizontal_container" style={{ justifyContent: "center", gap: "16px" }}>
-                    <img src="/img/light.jpg" style={{ width: '70%', borderRadius: '4px' }} alt="lightofhope" />
+                    <img src="/img/nik_page/light.jpg" style={{ width: '70%', borderRadius: '4px' }} alt="lightofhope" />
                   </div>
                 </div>
               }
@@ -200,8 +200,8 @@ export default function NikCoco() {
                     <li style={{ marginTop: '8px' }}>I was part of the multimedia committee and my main tasks include designing posters, certificates and being the photographer for the event day.</li>
                   </ul>
                   <div className="center_horizontal_container" style={{ justifyContent: "center", gap: "16px" }}>
-                    <img src="/img/code1.webp" style={{ width: '45%', borderRadius: '4px' }} alt="codenection" />
-                    <img src="/img/code2.webp" style={{ width: '45%', borderRadius: '4px' }} alt="codenection" />
+                    <img src="/img/nik_page/code1.webp" style={{ width: '45%', borderRadius: '4px' }} alt="codenection" />
+                    <img src="/img/nik_page/code2.webp" style={{ width: '45%', borderRadius: '4px' }} alt="codenection" />
                   </div>
                 </div>
               }
@@ -225,8 +225,8 @@ export default function NikCoco() {
                     <li style={{ marginTop: '8px' }}>We also did many meaningful activities with the students such as Explorace, sharing sessions, and many more.</li>
                   </ul>
                   <div className="center_horizontal_container" style={{ justifyContent: "center", gap: "16px" }}>
-                    <img src="/img/jubli1.webp" style={{ width: '45%', borderRadius: '4px' }} alt="jubli" />
-                    <img src="/img/jubli2.webp" style={{ width: '45%', borderRadius: '4px' }} alt="jubli" />
+                    <img src="/img/nik_page/jubli1.webp" style={{ width: '45%', borderRadius: '4px' }} alt="jubli" />
+                    <img src="/img/nik_page/jubli2.webp" style={{ width: '45%', borderRadius: '4px' }} alt="jubli" />
                   </div>
                 </div>
               }
@@ -247,7 +247,7 @@ export default function NikCoco() {
                     <li>A volunteering programme held at Pusat Perubatan Universiti Malaya, where the goal is to take care of child patients diagnosed with cancer.</li>
                     <li style={{ marginTop: '8px' }}>We played and entertained the children with board games, and made conversations with them.</li>
                   </ul>
-                  <img src="/img/cares.webp" style={{ width: '50%', borderRadius: '4px' }} alt="cares" />
+                  <img src="/img//nik_page/cares.webp" style={{ width: '50%', borderRadius: '4px' }} alt="cares" />
                 </div>
               }
             />
@@ -263,8 +263,8 @@ export default function NikCoco() {
                     <li style={{ marginTop: '8px' }}>Handled activities and sharing sessions.</li>
                   </ul>
                   <div className="center_horizontal_container" style={{ justifyContent: "center", gap: "16px" }}>
-                    <img src="/img/mmp1.webp" style={{ width: '45%', borderRadius: '4px' }} alt="mmp" />
-                    <img src="/img/mmp2.webp" style={{ width: '45%', borderRadius: '4px' }} alt="mmp" />
+                    <img src="/img/nik_page/mmp1.webp" style={{ width: '45%', borderRadius: '4px' }} alt="mmp" />
+                    <img src="/img/nik_page/mmp2.webp" style={{ width: '45%', borderRadius: '4px' }} alt="mmp" />
                   </div>
                 </div>
               }
@@ -288,8 +288,8 @@ export default function NikCoco() {
                     <li style={{ marginTop: '8px' }}>Obtained <strong>Gold Medal</strong> and <strong>Best Research Award</strong> for Review Paper Category.</li>
                   </ul>
                   <div className="center_horizontal_container" style={{ justifyContent: "center", gap: "16px" }}>
-                    <img src="/img/ifsc.webp" style={{ width: '45%', borderRadius: '4px' }} alt="ifsc" />
-                    <img src="/img/ifsc_best.webp" style={{ width: '45%', borderRadius: '4px' }} alt="ifsc_best" />
+                    <img src="/img/nik_page/ifsc.webp" style={{ width: '45%', borderRadius: '4px' }} alt="ifsc" />
+                    <img src="/img/nik_page/IFSC_best.webp" style={{ width: '45%', borderRadius: '4px' }} alt="ifsc_best" />
                   </div>
                 </div>
               }
