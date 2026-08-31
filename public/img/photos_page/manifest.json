@@ -1,54 +1,33 @@
 {
-  "dscf2015.webp": [
+  "architecture": [
+    "/img/photos_page/Architecture/1-DSCF2960.webp",
+    "/img/photos_page/Architecture/2-DSCF2957.webp",
+    "/img/photos_page/Architecture/4-DSCF2942.webp",
+    "/img/photos_page/Architecture/5-DSCF2938.webp",
+    "/img/photos_page/Architecture/6-DSCF2933.webp",
+    "/img/photos_page/Architecture/7-DSCF2921.webp",
+    "/img/photos_page/Architecture/8-IMG_2447.webp",
+    "/img/photos_page/Architecture/9-IMG_2446.webp",
+    "/img/photos_page/Architecture/10-DSCF2907.webp",
+    "/img/photos_page/Architecture/11-DSCF2906.webp",
+    "/img/photos_page/Architecture/11-DSCF7765.webp",
+    "/img/photos_page/Architecture/12-DSCF2895.webp",
+    "/img/photos_page/Architecture/12-DSCF7743.webp",
+    "/img/photos_page/Architecture/13-DSCF2892.webp",
+    "/img/photos_page/Architecture/19-DSCF7573.webp",
+    "/img/photos_page/Architecture/20-DSCF7572.webp",
     "/img/photos_page/Architecture/DSCF2015.webp"
   ],
-  "9-img_2446.webp": [
-    "/img/photos_page/Architecture/9-IMG_2446.webp"
-  ],
-  "8-img_2447.webp": [
-    "/img/photos_page/Architecture/8-IMG_2447.webp"
-  ],
-  "7-dscf2921.webp": [
-    "/img/photos_page/Architecture/7-DSCF2921.webp"
-  ],
-  "6-dscf2933.webp": [
-    "/img/photos_page/Architecture/6-DSCF2933.webp"
-  ],
-  "5-dscf2938.webp": [
-    "/img/photos_page/Architecture/5-DSCF2938.webp"
-  ],
-  "4-dscf2942.webp": [
-    "/img/photos_page/Architecture/4-DSCF2942.webp"
-  ],
-  "20-dscf7572.webp": [
-    "/img/photos_page/Architecture/20-DSCF7572.webp"
-  ],
-  "2-dscf2957.webp": [
-    "/img/photos_page/Architecture/2-DSCF2957.webp"
-  ],
-  "19-dscf7573.webp": [
-    "/img/photos_page/Architecture/19-DSCF7573.webp"
-  ],
-  "13-dscf2892.webp": [
-    "/img/photos_page/Architecture/13-DSCF2892.webp"
-  ],
-  "12-dscf7743.webp": [
-    "/img/photos_page/Architecture/12-DSCF7743.webp"
-  ],
-  "12-dscf2895.webp": [
-    "/img/photos_page/Architecture/12-DSCF2895.webp"
-  ],
-  "11-dscf7765.webp": [
-    "/img/photos_page/Architecture/11-DSCF7765.webp"
-  ],
-  "11-dscf2906.webp": [
-    "/img/photos_page/Architecture/11-DSCF2906.webp"
-  ],
-  "10-dscf2907.webp": [
-    "/img/photos_page/Architecture/10-DSCF2907.webp"
-  ],
-  "1-dscf2960.webp": [
-    "/img/photos_page/Architecture/1-DSCF2960.webp"
+  "nature": [
+    "/img/photos_page/Travel/Nature/1-DSCF0783.webp",
+    "/img/photos_page/Travel/Nature/2-DSCF0781.webp",
+    "/img/photos_page/Travel/Nature/4-DSCF3330.webp",
+    "/img/photos_page/Travel/Nature/4-DSCF7293.webp",
+    "/img/photos_page/Travel/Nature/5-DSCF3322.webp",
+    "/img/photos_page/Travel/Nature/5-DSCF7284.webp",
+    "/img/photos_page/Travel/Nature/6-DSCF3312.webp",
+    "/img/photos_page/Travel/Nature/6-DSCF7283.webp",
+    "/img/photos_page/Travel/Nature/DSCF9236.webp"
   ],
   "cities": [
     "/img/photos_page/Travel/Cities/1-DSCF8186.webp",
@@ -65,17 +44,6 @@
     "/img/photos_page/Travel/Cities/27-DSCF7495.webp",
     "/img/photos_page/Travel/Cities/DSCF8621.webp",
     "/img/photos_page/Travel/Cities/DSCF9633.webp"
-  ],
-  "nature": [
-    "/img/photos_page/Travel/Nature/1-DSCF0783.webp",
-    "/img/photos_page/Travel/Nature/2-DSCF0781.webp",
-    "/img/photos_page/Travel/Nature/4-DSCF3330.webp",
-    "/img/photos_page/Travel/Nature/4-DSCF7293.webp",
-    "/img/photos_page/Travel/Nature/5-DSCF3322.webp",
-    "/img/photos_page/Travel/Nature/5-DSCF7284.webp",
-    "/img/photos_page/Travel/Nature/6-DSCF3312.webp",
-    "/img/photos_page/Travel/Nature/6-DSCF7283.webp",
-    "/img/photos_page/Travel/Nature/DSCF9236.webp"
   ],
   "skating": [
     "/img/photos_page/Lifestyle/Skating/3-DSCF8095.webp",
@@ -107,19 +75,6 @@
     "/img/photos_page/Lifestyle/Car Meet/11-IMG_0093.webp",
     "/img/photos_page/Lifestyle/Car Meet/12-IMG_0094.webp"
   ],
-  "weddings": [
-    "/img/photos_page/Events/Weddings/1.webp",
-    "/img/photos_page/Events/Weddings/2.webp",
-    "/img/photos_page/Events/Weddings/5.webp",
-    "/img/photos_page/Events/Weddings/6.webp",
-    "/img/photos_page/Events/Weddings/7.webp",
-    "/img/photos_page/Events/Weddings/8.webp",
-    "/img/photos_page/Events/Weddings/9.webp",
-    "/img/photos_page/Events/Weddings/10.webp",
-    "/img/photos_page/Events/Weddings/11.webp",
-    "/img/photos_page/Events/Weddings/12.webp",
-    "/img/photos_page/Events/Weddings/13.webp"
-  ],
   "sports": [
     "/img/photos_page/Events/Sports/1.webp",
     "/img/photos_page/Events/Sports/2.webp",
@@ -134,15 +89,18 @@
     "/img/photos_page/Events/Sports/11.webp",
     "/img/photos_page/Events/Sports/12.webp"
   ],
-  "community events": [
-    "/img/photos_page/Events/Community Events/1.webp",
-    "/img/photos_page/Events/Community Events/2.webp",
-    "/img/photos_page/Events/Community Events/3.webp",
-    "/img/photos_page/Events/Community Events/4.webp",
-    "/img/photos_page/Events/Community Events/5.webp",
-    "/img/photos_page/Events/Community Events/6.webp",
-    "/img/photos_page/Events/Community Events/7.webp",
-    "/img/photos_page/Events/Community Events/8.webp"
+  "weddings": [
+    "/img/photos_page/Events/Weddings/1.webp",
+    "/img/photos_page/Events/Weddings/2.webp",
+    "/img/photos_page/Events/Weddings/5.webp",
+    "/img/photos_page/Events/Weddings/6.webp",
+    "/img/photos_page/Events/Weddings/7.webp",
+    "/img/photos_page/Events/Weddings/8.webp",
+    "/img/photos_page/Events/Weddings/9.webp",
+    "/img/photos_page/Events/Weddings/10.webp",
+    "/img/photos_page/Events/Weddings/11.webp",
+    "/img/photos_page/Events/Weddings/12.webp",
+    "/img/photos_page/Events/Weddings/13.webp"
   ],
   "graduation": [
     "/img/photos_page/Events/Graduation/1.webp",
@@ -153,6 +111,16 @@
     "/img/photos_page/Events/Graduation/6.webp",
     "/img/photos_page/Events/Graduation/7.webp",
     "/img/photos_page/Events/Graduation/8.webp"
+  ],
+  "community": [
+    "/img/photos_page/Events/Community/1.webp",
+    "/img/photos_page/Events/Community/2.webp",
+    "/img/photos_page/Events/Community/3.webp",
+    "/img/photos_page/Events/Community/4.webp",
+    "/img/photos_page/Events/Community/5.webp",
+    "/img/photos_page/Events/Community/6.webp",
+    "/img/photos_page/Events/Community/7.webp",
+    "/img/photos_page/Events/Community/8.webp"
   ],
   "concert": [
     "/img/photos_page/Events/Concert/1.webp",
