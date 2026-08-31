@@ -64,19 +64,19 @@ const subCategoryMetadata: Record<string, SubCategoryMeta> = {
   // LIFESTYLE CATEGORIES
   carmeet: {
     title: 'CAR MEET',
-    description: 'Breathtaking landscapes, pristine wilderness, and the quiet beauty of the natural world.',
+    description: 'Automotive culture, custom builds, and the details of performance machines.',
     parentHref: '/photos/lifestyle',
     parentLabel: 'BACK TO LIFESTYLE',
   },
   polo: {
     title: 'POLO',
-    description: 'Urban architecture, vibrant street life, and the dynamic energy of cityscapes.',
+    description: 'Equestrian action, and classic sporting elegance on the field',
     parentHref: '/photos/lifestyle',
     parentLabel: 'BACK TO LIFESTYLE',
   },
   skating: {
     title: 'SKATING',
-    description: 'Urban architecture, vibrant street life, and the dynamic energy of cityscapes.',
+    description: 'Raw street energy, and the artistry of skateboard culture.',
     parentHref: '/photos/lifestyle',
     parentLabel: 'BACK TO LIFESTYLE',
   },

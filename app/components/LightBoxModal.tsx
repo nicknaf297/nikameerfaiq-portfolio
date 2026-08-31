@@ -47,18 +47,37 @@ export default function LightboxModal({
 
   const handleDownload = async (imgSrc: string) => {
     try {
-      const response = await fetch(imgSrc);
+      const rawJpgSrc = imgSrc.replace(/\.webp$/i, '.jpg');
+
+      const response = await fetch(rawJpgSrc);
+      if (!response.ok) throw new Error('Raw JPG file not found');
+
       const blob = await response.blob();
       const blobUrl = window.URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = blobUrl;
-      link.download = `${categoryId}-${Date.now()}.webp`;
+      
+      const fileName = rawJpgSrc.split('/').pop() || `${categoryId}-${Date.now()}.jpg`;
+      link.download = fileName;
+
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
       window.URL.revokeObjectURL(blobUrl);
     } catch (error) {
-      console.error('Download failed:', error);
+      console.warn('Full-res JPG download failed, falling back to WebP:', error);
+      
+      // Fallback: download WebP if original JPG is missing
+      const response = await fetch(imgSrc);
+      const blob = await response.blob();
+      const blobUrl = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = blobUrl;
+      link.download = imgSrc.split('/').pop() || `${categoryId}-${Date.now()}.webp`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(blobUrl);
     }
   };
 
