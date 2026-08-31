@@ -9,11 +9,7 @@ const sourceCodeReg = localFont({ src: './fonts/SourceCodePro-Regular.ttf', vari
 const sourceCodeBold = localFont({ src: './fonts/SourceCodePro-Bold.ttf', variable: '--font-sc-bold' });
 const sourceCodeItalic = localFont({ src: './fonts/SourceCodePro-Italic.ttf', variable: '--font-sc-italic' });
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="en"
@@ -27,7 +23,7 @@ export default function RootLayout({
       `}
     >
       <body>
-        <Header/>
+        <Header />
         <main>{children}</main>
       </body>
     </html>

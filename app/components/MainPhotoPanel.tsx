@@ -29,11 +29,10 @@ export default function MainPhotoPanel({
         borderRadius: '10px',
         overflow: 'hidden',
         cursor: 'pointer',
-        border: 'none', /* Removed card border */
         background: '#1a1a1a',
       }}
     >
-      {/* Background Cover Photo with Saturation Effect on Hover */}
+      {/* Background Cover Photo */}
       <motion.img
         src={coverImage}
         alt={title}
@@ -50,29 +49,72 @@ export default function MainPhotoPanel({
         }}
       />
 
-      {/* Text Overlay at Bottom */}
+      {/* Text Overlay with Increased Typography Sizes */}
       <div
         style={{
           position: 'absolute',
-          inset: 0,
-          background:
-            'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 50%, transparent 100%)',
-          padding: '32px',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: 'linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.3) 65%, transparent 100%)',
+          padding: '24px',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'flex-end',
-          color: '#fff',
+          boxSizing: 'border-box',
+          color: '#ffffff',
+          pointerEvents: 'none',
         }}
       >
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-          <h2 className="header_text" style={{ fontSize: '36px', letterSpacing: '1px' }}>
+        <div 
+          style={{ 
+            display: 'flex', 
+            flexDirection: 'column', 
+            gap: '6px',
+            alignItems: 'flex-start',
+            width: '100%',
+          }}
+        >
+          {/* TITLE: Increased from 22px to 28px */}
+          <h2 
+            className="header_text" 
+            style={{ 
+              fontSize: '28px', 
+              letterSpacing: '0.5px', 
+              margin: 0,
+              lineHeight: '1.1',
+              color: '#ffffff',
+            }}
+          >
             {title}
           </h2>
-          <span className="body_text_bold" style={{ fontSize: '13px', color: '#FFAC41', letterSpacing: '0.5px' }}>
+
+          {/* CALL TO ACTION: Increased from 11px to 13px */}
+          <span 
+            className="body_text_bold" 
+            style={{ 
+              fontSize: '13px', 
+              color: '#FFAC41', 
+              letterSpacing: '0.5px',
+              whiteSpace: 'nowrap',
+            }}
+          >
             CLICK TO VIEW GALLERY &rarr;
           </span>
         </div>
-        <p className="body_text" style={{ fontSize: '15px', color: '#ddd', marginTop: '6px', lineHeight: '1.4' }}>
+
+        {/* DESCRIPTION: Increased from 13px to 15px */}
+        <p 
+          className="body_text" 
+          style={{ 
+            fontSize: '15px', 
+            color: '#e2e8f0', 
+            marginTop: '8px', 
+            marginBottom: 0,
+            lineHeight: '1.4',
+          }}
+        >
           {description}
         </p>
       </div>

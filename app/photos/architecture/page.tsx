@@ -10,7 +10,7 @@ interface SubCategory {
   coverImage: string;
 }
 
-const travelSubCategories: SubCategory[] = [
+const architectureSubCategories: SubCategory[] = [
   { id: 'srisendayan', title: 'MASJID SRI SENDAYAN', coverImage: '/img/photos_page/Architecture/srisendayan_cover.webp' },
   { id: 'kl', title: 'KUALA LUMPUR', coverImage: '/img/photos_page/Architecture/kl_cover.webp' },
 ];
@@ -21,9 +21,7 @@ const containerVariants: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.12,
-    },
+    transition: { staggerChildren: 0.12 },
   },
 };
 
@@ -39,17 +37,7 @@ const itemVariants: Variants = {
 
 export default function ArchitectureCategoryPage() {
   return (
-    <div
-      style={{
-        width: '100vw',
-        height: 'calc(100vh - 90px)',
-        padding: '16px 50px 32px 50px',
-        boxSizing: 'border-box',
-        display: 'flex',
-        flexDirection: 'column',
-        overflow: 'hidden',
-      }}
-    >
+    <div className="category-page-wrapper">
       <PageHeader
         title="ARCHITECTURE GALLERY"
         backHref="/photos"
@@ -57,21 +45,14 @@ export default function ArchitectureCategoryPage() {
         smoothEase={smoothEase}
       />
 
-      {/* STAGGERED GRID */}
+      {/* GRID CONTAINER */}
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="show"
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(3, 1fr)',
-          gridTemplateRows: 'repeat(2, 1fr)',
-          gap: '20px',
-          width: '100%',
-          flexGrow: 1,
-        }}
+        className="category-grid-container"
       >
-        {travelSubCategories.map((sub) => (
+        {architectureSubCategories.map((sub) => (
           <CategoryCard
             key={sub.id}
             id={sub.id}
@@ -87,6 +68,45 @@ export default function ArchitectureCategoryPage() {
       <style jsx global>{`
         .category-card-img:hover {
           filter: brightness(0.95) saturate(1.1) !important;
+        }
+      `}</style>
+
+      {/* CLEAN STYLES FOR DESKTOP AND MOBILE */}
+      <style jsx>{`
+        .category-page-wrapper {
+          width: 100vw;
+          height: calc(100vh - 90px);
+          padding: 16px 50px 32px 50px;
+          box-sizing: border-box;
+          display: flex;
+          flex-direction: column;
+          overflow: hidden;
+        }
+
+        :global(.category-grid-container) {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: repeat(2, 1fr);
+          gap: 20px;
+          width: 100%;
+          flex-grow: 1;
+        }
+
+        @media (max-width: 768px) {
+          .category-page-wrapper {
+            height: auto;
+            min-height: calc(100vh - 90px);
+            padding: 16px 20px 32px 20px;
+            overflow: auto;
+          }
+
+          :global(.category-grid-container) {
+            grid-template-columns: 1fr !important;
+            grid-template-rows: auto !important;
+            grid-auto-rows: 240px !important;
+            gap: 20px !important;
+            flex-grow: initial !important;
+          }
         }
       `}</style>
     </div>

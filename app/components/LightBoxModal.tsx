@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useCallback } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, PanInfo } from 'framer-motion';
 
 interface LightboxModalProps {
   selectedIndex: number | null;
@@ -11,9 +11,7 @@ interface LightboxModalProps {
   onNavigate: (newIndex: number) => void;
 }
 
-const smoothEase = [0.4, 0.4, 0.6, 1] as const;
-
-export default function LightboxModal({
+export default function LightBoxModal({
   selectedIndex,
   images,
   categoryId,
@@ -34,6 +32,15 @@ export default function LightboxModal({
     }
   }, [selectedIndex, images.length, onNavigate]);
 
+  // Swipe detection handler
+  const handleDragEnd = (_: any, info: PanInfo) => {
+    if (info.offset.x < -50) {
+      handleNext(); // Swiped left
+    } else if (info.offset.x > 50) {
+      handlePrev(); // Swiped right
+    }
+  };
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!isOpen) return;
@@ -48,26 +55,18 @@ export default function LightboxModal({
   const handleDownload = async (imgSrc: string) => {
     try {
       const rawJpgSrc = imgSrc.replace(/\.webp$/i, '.jpg');
-
       const response = await fetch(rawJpgSrc);
-      if (!response.ok) throw new Error('Raw JPG file not found');
-
+      if (!response.ok) throw new Error('Raw JPG missing');
       const blob = await response.blob();
       const blobUrl = window.URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = blobUrl;
-      
-      const fileName = rawJpgSrc.split('/').pop() || `${categoryId}-${Date.now()}.jpg`;
-      link.download = fileName;
-
+      link.download = rawJpgSrc.split('/').pop() || `${categoryId}-${Date.now()}.jpg`;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
       window.URL.revokeObjectURL(blobUrl);
-    } catch (error) {
-      console.warn('Full-res JPG download failed, falling back to WebP:', error);
-      
-      // Fallback: download WebP if original JPG is missing
+    } catch {
       const response = await fetch(imgSrc);
       const blob = await response.blob();
       const blobUrl = window.URL.createObjectURL(blob);
@@ -99,19 +98,19 @@ export default function LightboxModal({
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            padding: '40px',
+            padding: '16px',
             boxSizing: 'border-box',
           }}
         >
-          {/* Action Buttons Top Bar */}
+          {/* Top Bar Controls */}
           <div
             style={{
               position: 'absolute',
-              top: '30px',
-              right: '40px',
+              top: '20px',
+              right: '20px',
               display: 'flex',
               alignItems: 'center',
-              gap: '16px',
+              gap: '12px',
               zIndex: 1010,
             }}
           >
@@ -126,10 +125,9 @@ export default function LightboxModal({
                 color: '#111',
                 border: 'none',
                 borderRadius: '6px',
-                padding: '10px 18px',
-                fontSize: '13px',
+                padding: '8px 14px',
+                fontSize: '12px',
                 cursor: 'pointer',
-                letterSpacing: '0.5px',
                 fontWeight: 600,
               }}
             >
@@ -139,13 +137,13 @@ export default function LightboxModal({
             <button
               onClick={onClose}
               style={{
-                background: 'rgba(255,255,255,0.1)',
+                background: 'rgba(255,255,255,0.15)',
                 border: 'none',
                 color: '#fff',
                 borderRadius: '50%',
-                width: '42px',
-                height: '42px',
-                fontSize: '20px',
+                width: '40px',
+                height: '40px',
+                fontSize: '18px',
                 cursor: 'pointer',
               }}
             >
@@ -153,69 +151,77 @@ export default function LightboxModal({
             </button>
           </div>
 
-          {/* Navigation Control Left */}
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              handlePrev();
-            }}
-            style={{
-              position: 'absolute',
-              left: '30px',
-              background: 'rgba(255,255,255,0.1)',
-              border: 'none',
-              color: '#fff',
-              borderRadius: '50%',
-              width: '50px',
-              height: '50px',
-              fontSize: '24px',
-              cursor: 'pointer',
-              zIndex: 1010,
-            }}
-          >
-            ‹
-          </button>
-
-          {/* Enlarged Photo Display */}
+          {/* Swipeable Image */}
           <motion.img
             key={selectedIndex}
             initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
             transition={{ duration: 0.2 }}
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={0.2}
+            onDragEnd={handleDragEnd}
             src={images[selectedIndex]}
             alt="Enlarged view"
             onClick={(e) => e.stopPropagation()}
             style={{
-              maxWidth: '85vw',
-              maxHeight: '85vh',
+              maxWidth: '92vw',
+              maxHeight: '80vh',
               objectFit: 'contain',
               borderRadius: '6px',
+              touchAction: 'none',
             }}
           />
 
-          {/* Navigation Control Right */}
+          {/* Desktop Chevron Navigation (Hidden on small screens) */}
           <button
+            className="lightbox-nav-btn left"
+            onClick={(e) => {
+              e.stopPropagation();
+              handlePrev();
+            }}
+          >
+            ‹
+          </button>
+          <button
+            className="lightbox-nav-btn right"
             onClick={(e) => {
               e.stopPropagation();
               handleNext();
             }}
-            style={{
-              position: 'absolute',
-              right: '30px',
-              background: 'rgba(255,255,255,0.1)',
-              border: 'none',
-              color: '#fff',
-              borderRadius: '50%',
-              width: '50px',
-              height: '50px',
-              fontSize: '24px',
-              cursor: 'pointer',
-              zIndex: 1010,
-            }}
           >
             ›
           </button>
+
+          <style jsx>{`
+            .lightbox-nav-btn {
+              position: absolute;
+              background: rgba(255, 255, 255, 0.1);
+              border: none;
+              color: #fff;
+              border-radius: 50%;
+              width: 48px;
+              height: 48px;
+              font-size: 24px;
+              cursor: pointer;
+              z-index: 1010;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+            .lightbox-nav-btn.left {
+              left: 20px;
+            }
+            .lightbox-nav-btn.right {
+              right: 20px;
+            }
+            @media (max-width: 640px) {
+              .lightbox-nav-btn {
+                display: none; /* Rely on swipe gestures on mobile */
+              }
+            }
+          `}</style>
         </motion.div>
       )}
     </AnimatePresence>

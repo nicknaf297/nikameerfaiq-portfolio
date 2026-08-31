@@ -3,7 +3,7 @@
 import { motion, Variants } from 'framer-motion';
 import Link from 'next/link';
 
-interface PhotoCategoryCardProps {
+interface CategoryCardProps {
   id: string;
   title: string;
   coverImage: string;
@@ -14,16 +14,25 @@ interface PhotoCategoryCardProps {
 
 const defaultEase = [0.4, 0.4, 0.6, 1] as const;
 
-export default function PhotoCategoryCard({
+export default function CategoryCard({
   id,
   title,
   coverImage,
   baseHref,
   variants,
   smoothEase = defaultEase,
-}: PhotoCategoryCardProps) {
+}: CategoryCardProps) {
   return (
-    <Link href={`${baseHref}/${id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+    <Link 
+      href={`${baseHref}/${id}`} 
+      style={{ 
+        textDecoration: 'none', 
+        color: 'inherit',
+        display: 'block',
+        width: '100%',
+        height: '100%',
+      }}
+    >
       <motion.div
         variants={variants}
         whileHover="hover"
@@ -33,6 +42,7 @@ export default function PhotoCategoryCard({
           position: 'relative',
           width: '100%',
           height: '100%',
+          minHeight: '100%',
           borderRadius: '10px',
           overflow: 'hidden',
           cursor: 'pointer',
@@ -57,7 +67,7 @@ export default function PhotoCategoryCard({
             height: '100%',
             objectFit: 'cover',
             display: 'block',
-            filter: 'brightness(0.85) saturate(0.85)',
+            filter: 'brightness(0.75) saturate(0.85)',
             transition: 'filter 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
             willChange: 'filter, transform',
           }}
@@ -67,19 +77,23 @@ export default function PhotoCategoryCard({
         <div
           style={{
             position: 'absolute',
-            inset: 0,
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
             background:
-              'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.15) 60%, transparent 100%)',
-            padding: '24px',
+              'linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 65%, transparent 100%)',
+            padding: '16px 20px',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'flex-end',
             color: '#fff',
             pointerEvents: 'none',
+            boxSizing: 'border-box',
           }}
         >
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', width: '100%' }}>
-            <h2 className="header_text" style={{ fontSize: '22px', letterSpacing: '0.5px', margin: 0 }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
+            <h2 className="header_text" style={{ fontSize: '20px', letterSpacing: '0.5px', margin: 0, color: '#ffffff' }}>
               {title}
             </h2>
             <motion.span
@@ -88,7 +102,7 @@ export default function PhotoCategoryCard({
                 hover: { x: 6 },
               }}
               transition={{ duration: 0.4, ease: smoothEase }}
-              style={{ fontSize: '12px', color: '#FFAC41', letterSpacing: '0.5px' }}
+              style={{ fontSize: '12px', color: '#FFAC41', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}
             >
               VIEW &rarr;
             </motion.span>
