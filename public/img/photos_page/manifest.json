@@ -1,34 +1,4 @@
 {
-  "architecture": [
-    "/img/photos_page/Architecture/1-DSCF2960.webp",
-    "/img/photos_page/Architecture/2-DSCF2957.webp",
-    "/img/photos_page/Architecture/4-DSCF2942.webp",
-    "/img/photos_page/Architecture/5-DSCF2938.webp",
-    "/img/photos_page/Architecture/6-DSCF2933.webp",
-    "/img/photos_page/Architecture/7-DSCF2921.webp",
-    "/img/photos_page/Architecture/8-IMG_2447.webp",
-    "/img/photos_page/Architecture/9-IMG_2446.webp",
-    "/img/photos_page/Architecture/10-DSCF2907.webp",
-    "/img/photos_page/Architecture/11-DSCF2906.webp",
-    "/img/photos_page/Architecture/11-DSCF7765.webp",
-    "/img/photos_page/Architecture/12-DSCF2895.webp",
-    "/img/photos_page/Architecture/12-DSCF7743.webp",
-    "/img/photos_page/Architecture/13-DSCF2892.webp",
-    "/img/photos_page/Architecture/19-DSCF7573.webp",
-    "/img/photos_page/Architecture/20-DSCF7572.webp",
-    "/img/photos_page/Architecture/DSCF2015.webp"
-  ],
-  "nature": [
-    "/img/photos_page/Travel/Nature/1-DSCF0783.webp",
-    "/img/photos_page/Travel/Nature/2-DSCF0781.webp",
-    "/img/photos_page/Travel/Nature/4-DSCF3330.webp",
-    "/img/photos_page/Travel/Nature/4-DSCF7293.webp",
-    "/img/photos_page/Travel/Nature/5-DSCF3322.webp",
-    "/img/photos_page/Travel/Nature/5-DSCF7284.webp",
-    "/img/photos_page/Travel/Nature/6-DSCF3312.webp",
-    "/img/photos_page/Travel/Nature/6-DSCF7283.webp",
-    "/img/photos_page/Travel/Nature/DSCF9236.webp"
-  ],
   "cities": [
     "/img/photos_page/Travel/Cities/1-DSCF8186.webp",
     "/img/photos_page/Travel/Cities/2-DSCF8170.webp",
@@ -45,12 +15,22 @@
     "/img/photos_page/Travel/Cities/DSCF8621.webp",
     "/img/photos_page/Travel/Cities/DSCF9633.webp"
   ],
+  "nature": [
+    "/img/photos_page/Travel/Nature/1-DSCF0783.webp",
+    "/img/photos_page/Travel/Nature/2-DSCF0781.webp",
+    "/img/photos_page/Travel/Nature/4-DSCF3330.webp",
+    "/img/photos_page/Travel/Nature/4-DSCF7293.webp",
+    "/img/photos_page/Travel/Nature/5-DSCF3322.webp",
+    "/img/photos_page/Travel/Nature/5-DSCF7284.webp",
+    "/img/photos_page/Travel/Nature/6-DSCF3312.webp",
+    "/img/photos_page/Travel/Nature/6-DSCF7283.webp",
+    "/img/photos_page/Travel/Nature/DSCF9236.webp"
+  ],
   "skating": [
     "/img/photos_page/Lifestyle/Skating/3-DSCF8095.webp",
     "/img/photos_page/Lifestyle/Skating/4-DSCF8080.webp",
     "/img/photos_page/Lifestyle/Skating/5-DSCF8039.webp",
     "/img/photos_page/Lifestyle/Skating/6-DSCF7907.webp",
-    "/img/photos_page/Lifestyle/Skating/6-IMG_2766.webp",
     "/img/photos_page/Lifestyle/Skating/7-DSCF7905.webp",
     "/img/photos_page/Lifestyle/Skating/8-DSCF7848.webp",
     "/img/photos_page/Lifestyle/Skating/9-DSCF7825.webp",
@@ -61,33 +41,19 @@
     "/img/photos_page/Lifestyle/Polo/2-DSCF7394.webp",
     "/img/photos_page/Lifestyle/Polo/3-DSCF7379.webp"
   ],
-  "car meet": [
-    "/img/photos_page/Lifestyle/Car Meet/1-IMG_0104.webp",
-    "/img/photos_page/Lifestyle/Car Meet/2-IMG_0103.webp",
-    "/img/photos_page/Lifestyle/Car Meet/3-IMG_0102.webp",
-    "/img/photos_page/Lifestyle/Car Meet/4-IMG_0101.webp",
-    "/img/photos_page/Lifestyle/Car Meet/5-IMG_0100.webp",
-    "/img/photos_page/Lifestyle/Car Meet/6-IMG_0099.webp",
-    "/img/photos_page/Lifestyle/Car Meet/7-IMG_0098.webp",
-    "/img/photos_page/Lifestyle/Car Meet/8-IMG_0097.webp",
-    "/img/photos_page/Lifestyle/Car Meet/9-IMG_0096.webp",
-    "/img/photos_page/Lifestyle/Car Meet/10-IMG_0095.webp",
-    "/img/photos_page/Lifestyle/Car Meet/11-IMG_0093.webp",
-    "/img/photos_page/Lifestyle/Car Meet/12-IMG_0094.webp"
-  ],
-  "sports": [
-    "/img/photos_page/Events/Sports/1.webp",
-    "/img/photos_page/Events/Sports/2.webp",
-    "/img/photos_page/Events/Sports/3.webp",
-    "/img/photos_page/Events/Sports/4.webp",
-    "/img/photos_page/Events/Sports/5.webp",
-    "/img/photos_page/Events/Sports/6.webp",
-    "/img/photos_page/Events/Sports/7.webp",
-    "/img/photos_page/Events/Sports/8.webp",
-    "/img/photos_page/Events/Sports/9.webp",
-    "/img/photos_page/Events/Sports/10.webp",
-    "/img/photos_page/Events/Sports/11.webp",
-    "/img/photos_page/Events/Sports/12.webp"
+  "carmeet": [
+    "/img/photos_page/Lifestyle/CarMeet/1-IMG_0104.webp",
+    "/img/photos_page/Lifestyle/CarMeet/2-IMG_0103.webp",
+    "/img/photos_page/Lifestyle/CarMeet/3-IMG_0102.webp",
+    "/img/photos_page/Lifestyle/CarMeet/4-IMG_0101.webp",
+    "/img/photos_page/Lifestyle/CarMeet/5-IMG_0100.webp",
+    "/img/photos_page/Lifestyle/CarMeet/6-IMG_0099.webp",
+    "/img/photos_page/Lifestyle/CarMeet/7-IMG_0098.webp",
+    "/img/photos_page/Lifestyle/CarMeet/8-IMG_0097.webp",
+    "/img/photos_page/Lifestyle/CarMeet/9-IMG_0096.webp",
+    "/img/photos_page/Lifestyle/CarMeet/10-IMG_0095.webp",
+    "/img/photos_page/Lifestyle/CarMeet/11-IMG_0093.webp",
+    "/img/photos_page/Lifestyle/CarMeet/12-IMG_0094.webp"
   ],
   "weddings": [
     "/img/photos_page/Events/Weddings/1.webp",
@@ -102,6 +68,21 @@
     "/img/photos_page/Events/Weddings/12.webp",
     "/img/photos_page/Events/Weddings/13.webp"
   ],
+  "sports": [
+    "/img/photos_page/Events/Sports/1.webp",
+    "/img/photos_page/Events/Sports/2.webp",
+    "/img/photos_page/Events/Sports/3.webp",
+    "/img/photos_page/Events/Sports/4.webp",
+    "/img/photos_page/Events/Sports/5.webp",
+    "/img/photos_page/Events/Sports/6-IMG_2766.webp",
+    "/img/photos_page/Events/Sports/6.webp",
+    "/img/photos_page/Events/Sports/7.webp",
+    "/img/photos_page/Events/Sports/8.webp",
+    "/img/photos_page/Events/Sports/9.webp",
+    "/img/photos_page/Events/Sports/10.webp",
+    "/img/photos_page/Events/Sports/11.webp",
+    "/img/photos_page/Events/Sports/12.webp"
+  ],
   "graduation": [
     "/img/photos_page/Events/Graduation/1.webp",
     "/img/photos_page/Events/Graduation/2.webp",
@@ -111,16 +92,6 @@
     "/img/photos_page/Events/Graduation/6.webp",
     "/img/photos_page/Events/Graduation/7.webp",
     "/img/photos_page/Events/Graduation/8.webp"
-  ],
-  "community": [
-    "/img/photos_page/Events/Community/1.webp",
-    "/img/photos_page/Events/Community/2.webp",
-    "/img/photos_page/Events/Community/3.webp",
-    "/img/photos_page/Events/Community/4.webp",
-    "/img/photos_page/Events/Community/5.webp",
-    "/img/photos_page/Events/Community/6.webp",
-    "/img/photos_page/Events/Community/7.webp",
-    "/img/photos_page/Events/Community/8.webp"
   ],
   "concert": [
     "/img/photos_page/Events/Concert/1.webp",
@@ -173,5 +144,36 @@
     "/img/photos_page/Events/Concert/53.webp",
     "/img/photos_page/Events/Concert/54.webp",
     "/img/photos_page/Events/Concert/55.webp"
+  ],
+  "community": [
+    "/img/photos_page/Events/Community/1.webp",
+    "/img/photos_page/Events/Community/2.webp",
+    "/img/photos_page/Events/Community/3.webp",
+    "/img/photos_page/Events/Community/4.webp",
+    "/img/photos_page/Events/Community/5.webp",
+    "/img/photos_page/Events/Community/6.webp",
+    "/img/photos_page/Events/Community/7.webp",
+    "/img/photos_page/Events/Community/8.webp"
+  ],
+  "srisendayan": [
+    "/img/photos_page/Architecture/SriSendayan/1-DSCF2960.webp",
+    "/img/photos_page/Architecture/SriSendayan/2-DSCF2957.webp",
+    "/img/photos_page/Architecture/SriSendayan/4-DSCF2942.webp",
+    "/img/photos_page/Architecture/SriSendayan/5-DSCF2938.webp",
+    "/img/photos_page/Architecture/SriSendayan/6-DSCF2933.webp",
+    "/img/photos_page/Architecture/SriSendayan/7-DSCF2921.webp",
+    "/img/photos_page/Architecture/SriSendayan/8-IMG_2447.webp",
+    "/img/photos_page/Architecture/SriSendayan/9-IMG_2446.webp",
+    "/img/photos_page/Architecture/SriSendayan/10-DSCF2907.webp",
+    "/img/photos_page/Architecture/SriSendayan/11-DSCF2906.webp",
+    "/img/photos_page/Architecture/SriSendayan/12-DSCF2895.webp",
+    "/img/photos_page/Architecture/SriSendayan/13-DSCF2892.webp"
+  ],
+  "kl": [
+    "/img/photos_page/Architecture/KL/11-DSCF7765.webp",
+    "/img/photos_page/Architecture/KL/12-DSCF7743.webp",
+    "/img/photos_page/Architecture/KL/19-DSCF7573.webp",
+    "/img/photos_page/Architecture/KL/20-DSCF7572.webp",
+    "/img/photos_page/Architecture/KL/DSCF2015.webp"
   ]
 }

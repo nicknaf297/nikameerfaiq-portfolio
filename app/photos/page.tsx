@@ -39,7 +39,6 @@ const categories: CategoryPanel[] = [
   },
 ];
 
-// Explicitly typed Variants to resolve TypeScript string ease conflict
 const panelVariants: Variants = {
   hidden: { opacity: 0, y: 35 },
   visible: {
@@ -57,6 +56,15 @@ export default function PhotosPage() {
   const handleCategoryClick = (categoryId: string) => {
     if (categoryId === 'events') {
       router.push('/photos/events');
+    }
+    else if (categoryId === 'travel') {
+      router.push('/photos/travel');
+    }
+    else if (categoryId === 'architecture') {
+      router.push('/photos/architecture');
+    }
+    else if (categoryId === 'lifestyle') {
+      router.push('/photos/lifestyle');
     }
   };
 
