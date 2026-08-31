@@ -16,25 +16,25 @@ const categories: CategoryPanel[] = [
   {
     id: 'events',
     title: 'EVENTS',
-    coverImage: '/img/photos_page/events_cover.jpg',
+    coverImage: '/img/photos_page/events_cover.webp',
     description: 'Concerts, Weddings, Graduation, Marriage, Sports and Community Events.',
   },
   {
     id: 'travel',
     title: 'TRAVEL',
-    coverImage: '/img/photos_page/travel_cover.jpg',
+    coverImage: '/img/photos_page/travel_cover.webp',
     description: 'Nature & Bustling Cities.',
   },
   {
     id: 'lifestyle',
     title: 'LIFESTYLE',
-    coverImage: '/img/photos_page/lifestyle_cover.jpg',
+    coverImage: '/img/photos_page/lifestyle_cover.webp',
     description: 'Human Acitvities and Everyday Aesthetics.',
   },
   {
     id: 'architecture',
     title: 'ARCHITECTURE',
-    coverImage: '/img/photos_page/arch_cover.jpg',
+    coverImage: '/img/photos_page/arch_cover.webp',
     description: 'Urban Geometry, Structures, and Modern Design.',
   },
 ];
@@ -107,7 +107,6 @@ export default function PhotosPage() {
           alignItems: 'start',
         }}
       >
-        {/* LEFT SIDEBAR: PROFILE & GEAR WITH FADE IN */}
         <motion.aside
           initial={{ opacity: 0, x: -25 }}
           animate={{ opacity: 1, x: 0 }}
@@ -141,7 +140,7 @@ export default function PhotosPage() {
               }}
             >
               <img
-                src="/img/photos_page/main.jpg"
+                src="/img/photos_page/main.webp"
                 alt="Nik Ameer Faiq Photography"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
               />

@@ -27,7 +27,7 @@ const subGalleries: Record<string, GalleryData> = {
     title: 'GRADUATION',
     description: 'Campus achievements and memorable convocation ceremonies.',
     images: [4, 1, 3, 5, 6, 7, 8, 2].map(
-      (num) => `/img/photos_page/Events/Gradutaion/${num}.webp`
+      (num) => `/img/photos_page/Events/Graduation/${num}.webp`
     ),
   },
   sports: {
