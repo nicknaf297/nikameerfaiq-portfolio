@@ -12,7 +12,7 @@ interface GalleryData {
 }
 
 const subCategoryInfo: Record<string, GalleryData> = {
-  concerts: {
+  concert: {
     title: 'CONCERTS',
     description: 'Live musical performances, and stage lighting.',
   },

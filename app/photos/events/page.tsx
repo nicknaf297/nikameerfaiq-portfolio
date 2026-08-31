@@ -10,7 +10,7 @@ interface SubCategory {
 }
 
 const eventSubCategories: SubCategory[] = [
-  { id: 'concerts', title: 'CONCERTS', coverImage: '/img/photos_page/Events/concert_cover.webp' },
+  { id: 'concert', title: 'CONCERTS', coverImage: '/img/photos_page/Events/concert_cover.webp' },
   { id: 'weddings', title: 'WEDDINGS', coverImage: '/img/photos_page/Events/weddings_cover.webp' },
   { id: 'graduation', title: 'GRADUATION', coverImage: '/img/photos_page/Events/graduation_cover.webp' },
   { id: 'sports', title: 'SPORTS', coverImage: '/img/photos_page/Events/sports_cover.webp' },
