@@ -1,146 +1,247 @@
 'use client';
 
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect, useRef } from 'react';
+import { motion, Variants } from 'framer-motion';
+import MainPhotoPanel from '@/app/components/MainPhotoPanel';
+import { useRouter } from 'next/navigation';
 
-interface PhotoItem {
+interface CategoryPanel {
   id: string;
-  src: string;
-  alt: string;
-  category: string;
-  title?: string;
+  title: string;
+  coverImage: string;
+  description: string;
 }
 
-// Sample photo data structure (Replace src paths with your images in public/img/photos/)
-const photosData: PhotoItem[] = [
-  { id: '1', src: '/img/photos/sample1.jpg', alt: 'Event Photography', category: 'Events', title: 'Sekolah@MMU Event' },
-  { id: '2', src: '/img/photos/sample2.jpg', alt: 'Street Shot', category: 'Street', title: 'Kuala Lumpur Night' },
-  { id: '3', src: '/img/photos/sample3.jpg', alt: 'Portrait', category: 'Portraits', title: 'Campus Portrait' },
-  { id: '4', src: '/img/photos/sample4.jpg', alt: 'Nature Shot', category: 'Nature', title: 'Sunset Views' },
+const categories: CategoryPanel[] = [
+  {
+    id: 'events',
+    title: 'EVENTS',
+    coverImage: '/img/photos_page/events_cover.jpg',
+    description: 'Concerts, Weddings, Graduation, Marriage, Sports and Community Events.',
+  },
+  {
+    id: 'travel',
+    title: 'TRAVEL',
+    coverImage: '/img/photos_page/travel_cover.jpg',
+    description: 'Nature & Bustling Cities.',
+  },
+  {
+    id: 'lifestyle',
+    title: 'LIFESTYLE',
+    coverImage: '/img/photos_page/lifestyle_cover.jpg',
+    description: 'Human Acitvities and Everyday Aesthetics.',
+  },
+  {
+    id: 'architecture',
+    title: 'ARCHITECTURE',
+    coverImage: '/img/photos_page/arch_cover.jpg',
+    description: 'Urban Geometry, Structures, and Modern Design.',
+  },
 ];
 
-const categories = ['All', 'Events', 'Street', 'Portraits', 'Nature'];
+// Explicitly typed Variants to resolve TypeScript string ease conflict
+const panelVariants: Variants = {
+  hidden: { opacity: 0, y: 35 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: 'easeOut' },
+  },
+};
 
 export default function PhotosPage() {
-  const [selectedCategory, setSelectedCategory] = useState('All');
-  const [activePhoto, setActivePhoto] = useState<PhotoItem | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const panelRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const router = useRouter();
 
-  const filteredPhotos = selectedCategory === 'All'
-    ? photosData
-    : photosData.filter((p) => p.category === selectedCategory);
+  const handleCategoryClick = (categoryId: string) => {
+    if (categoryId === 'events') {
+      router.push('/photos/events');
+    }
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = panelRefs.current.indexOf(entry.target as HTMLDivElement);
+            if (index !== -1) {
+              setActiveIndex(index);
+            }
+          }
+        });
+      },
+      { threshold: 0.6 }
+    );
+
+    panelRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const scrollToPanel = (index: number) => {
+    panelRefs.current[index]?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  };
 
   return (
-    <div style={{ maxWidth: '1400px', margin: '40px auto 100px auto', padding: '0 32px' }}>
-      {/* SECTION HEADER */}
-      <h1 className="resume-section-title" style={{ fontSize: '32px' }}>
-        PHOTOGRAPHY PORTFOLIO
-      </h1>
-
-      {/* CATEGORY FILTER BUTTONS */}
-      <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '32px' }}>
-        {categories.map((cat) => (
-          <button
-            key={cat}
-            onClick={() => setSelectedCategory(cat)}
+    <div
+      style={{
+        width: '100%',
+        padding: '16px 130px 32px 130px',
+        boxSizing: 'border-box',
+        position: 'relative',
+      }}
+    >
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: '420px 1fr',
+          gap: '40px',
+          width: '100%',
+          alignItems: 'start',
+        }}
+      >
+        {/* LEFT SIDEBAR: PROFILE & GEAR WITH FADE IN */}
+        <motion.aside
+          initial={{ opacity: 0, x: -25 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
+          style={{
+            position: 'sticky',
+            top: '90px',
+            alignSelf: 'start',
+            height: 'fit-content',
+            width: '100%',
+          }}
+        >
+          <div
             style={{
-              padding: '8px 18px',
-              borderRadius: '6px',
-              border: '1.5px solid #3d3d3d',
-              backgroundColor: selectedCategory === cat ? '#C73659' : '#fff',
-              color: selectedCategory === cat ? '#fff' : '#000',
-              fontFamily: 'var(--font-cp-bold), sans-serif',
-              fontSize: '14px',
-              cursor: 'pointer',
-              transition: 'all 0.2s ease',
+              background: '#fff',
+              borderRadius: '8px',
+              padding: '0px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '16px',
+              width: '100%',
+              boxSizing: 'border-box',
             }}
           >
-            {cat}
-          </button>
-        ))}
-      </div>
-
-      {/* PHOTO GRID */}
-      <motion.div
-        layout
-        className="resume-card-grid"
-        style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '20px' }}
-      >
-        <AnimatePresence>
-          {filteredPhotos.map((photo) => (
-            <motion.div
-              key={photo.id}
-              layout
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.3 }}
-              whileHover={{ y: -4 }}
-              onClick={() => setActivePhoto(photo)}
+            <div
               style={{
+                width: '100%',
                 borderRadius: '8px',
                 overflow: 'hidden',
-                cursor: 'pointer',
-                position: 'relative',
-                aspectRatio: '4 / 3',
-                background: '#1a1a1a',
-                border: '1px solid #e2e8f0',
+                border: 'none',
               }}
             >
               <img
-                src={photo.src}
-                alt={photo.alt}
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                  display: 'block',
-                  transition: 'transform 0.3s ease',
-                }}
+                src="/img/photos_page/main.jpg"
+                alt="Nik Ameer Faiq Photography"
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+              />
+            </div>
+
+            <p className="body_text" style={{ fontSize: '14px', lineHeight: '1.6', color: '#334155' }}>
+              Beyond computer science, photography is a big passion. It is my medium for capturing moments, and preserving memories I aspire to keep forever.
+            </p>
+
+            <div
+              style={{
+                borderTop: '1px solid #e2e8f0',
+                paddingTop: '14px',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '8px',
+              }}
+            >
+              <div className="body_text" style={{ fontSize: '13px', color: '#6b7280' }}>
+                📍 Based in Selangor, Malaysia
+              </div>
+              <div className="body_text" style={{ fontSize: '13px', color: '#6b7280' }}>
+                📷 Gear: Fujifilm XT30ii, Canon D5000
+              </div>
+            </div>
+          </div>
+        </motion.aside>
+
+        {/* RIGHT SIDE: ANIMATED CATEGORY PANELS */}
+        <main
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '48px',
+            width: '100%',
+          }}
+        >
+          {categories.map((cat, index) => (
+            <motion.div
+              key={cat.id}
+              ref={(el) => {
+                panelRefs.current[index] = el;
+              }}
+              variants={panelVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-40px' }}
+              style={{
+                scrollSnapAlign: 'start',
+                scrollMarginTop: '90px',
+                width: '100%',
+              }}
+            >
+              <MainPhotoPanel
+                title={cat.title}
+                coverImage={cat.coverImage}
+                description={cat.description}
+                onClick={() => handleCategoryClick(cat.id)}
               />
             </motion.div>
           ))}
-        </AnimatePresence>
-      </motion.div>
+        </main>
+      </div>
 
-      {/* LIGHTBOX POPUP MODAL */}
-      {activePhoto && (
-        <div
-          className="modal-overlay"
-          onClick={() => setActivePhoto(null)}
-          style={{ backgroundColor: 'rgba(0, 0, 0, 0.85)' }}
-        >
-          <div
-            className="modal-content"
-            onClick={(e) => e.stopPropagation()}
+      {/* FLOATING SCROLL DOTS INDICATOR */}
+      <motion.nav
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.3 }}
+        style={{
+          position: 'fixed',
+          right: '40px',
+          top: '50%',
+          transform: 'translateY(-50%)',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '14px',
+          zIndex: 50,
+        }}
+      >
+        {categories.map((cat, index) => (
+          <button
+            key={cat.id}
+            onClick={() => scrollToPanel(index)}
+            title={cat.title}
+            aria-label={`Scroll to ${cat.title}`}
             style={{
-              maxWidth: '900px',
-              padding: '20px',
-              background: '#000',
-              border: '1px solid #333',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
+              width: activeIndex === index ? '12px' : '8px',
+              height: activeIndex === index ? '12px' : '8px',
+              borderRadius: '50%',
+              backgroundColor: activeIndex === index ? '#FFAC41' : 'rgba(0, 0, 0, 0.3)',
+              border: 'none',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              padding: 0,
+              outline: 'none',
             }}
-          >
-            <div style={{ width: '100%', display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
-              <span className="header_text" style={{ fontSize: '18px', color: '#FFAC41' }}>
-                {activePhoto.title || activePhoto.alt}
-              </span>
-              <button
-                onClick={() => setActivePhoto(null)}
-                style={{ background: 'none', border: 'none', color: '#fff', fontSize: '24px', cursor: 'pointer' }}
-              >
-                &times;
-              </button>
-            </div>
-            <img
-              src={activePhoto.src}
-              alt={activePhoto.alt}
-              style={{ maxWidth: '100%', maxHeight: '70vh', objectFit: 'contain', borderRadius: '6px' }}
-            />
-          </div>
-        </div>
-      )}
+          />
+        ))}
+      </motion.nav>
     </div>
   );
 }

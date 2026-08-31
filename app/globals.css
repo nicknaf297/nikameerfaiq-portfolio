@@ -58,6 +58,11 @@ body {
   overflow-x: clip; 
 }
 
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
 a:link, a:visited, a:hover, a:active {
   text-decoration: none;
   color: white;
@@ -409,6 +414,15 @@ a:link, a:visited, a:hover, a:active {
   flex-direction: column;
   gap: 20px;
   box-sizing: border-box;
+}
+
+.category-cover-img {
+  transition: transform 0.4s ease-in-out, filter 0.4s ease-in-out;
+}
+
+div:hover > .category-cover-img {
+  transform: scale(1.08);
+  filter: brightness(0.95);
 }
 
 .modal-content::-webkit-scrollbar {
