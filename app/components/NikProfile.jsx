@@ -17,7 +17,7 @@ export default function NikProfile() {
       {/* Profile Avatar & Info */}
       <div className="center_vertical_container" style={{ gap: "10px", textAlign: "center" }}>
         <img 
-          src="/img/profile_pic.jpg" 
+          src="/img/profile_pic.JPG" 
           alt="Nik Ameer Faiq" 
           style={{ 
             width: '140px',

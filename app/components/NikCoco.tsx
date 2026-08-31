@@ -95,8 +95,8 @@ export default function NikCoco() {
                     </li>
                   </ul>
                   <div className="center_horizontal_container" style={{ justifyContent: "center", gap: "16px", flexWrap: "wrap" }}>
-                    <img src="/img/kelantan1.jpg" style={{ width: '45%', borderRadius: '4px' }} alt="kelantan" />
-                    <img src="/img/kelantan2.jpg" style={{ width: '45%', borderRadius: '4px' }} alt="kelantan" />
+                    <img src="/img/kelantan1.webp" style={{ width: '45%', borderRadius: '4px' }} alt="kelantan" />
+                    <img src="/img/kelantan2.webp" style={{ width: '45%', borderRadius: '4px' }} alt="kelantan" />
                   </div>
                 </div>
               }
@@ -200,8 +200,8 @@ export default function NikCoco() {
                     <li style={{ marginTop: '8px' }}>I was part of the multimedia committee and my main tasks include designing posters, certificates and being the photographer for the event day.</li>
                   </ul>
                   <div className="center_horizontal_container" style={{ justifyContent: "center", gap: "16px" }}>
-                    <img src="/img/code1.jpg" style={{ width: '45%', borderRadius: '4px' }} alt="codenection" />
-                    <img src="/img/code2.jpg" style={{ width: '45%', borderRadius: '4px' }} alt="codenection" />
+                    <img src="/img/code1.webp" style={{ width: '45%', borderRadius: '4px' }} alt="codenection" />
+                    <img src="/img/code2.webp" style={{ width: '45%', borderRadius: '4px' }} alt="codenection" />
                   </div>
                 </div>
               }
@@ -225,8 +225,8 @@ export default function NikCoco() {
                     <li style={{ marginTop: '8px' }}>We also did many meaningful activities with the students such as Explorace, sharing sessions, and many more.</li>
                   </ul>
                   <div className="center_horizontal_container" style={{ justifyContent: "center", gap: "16px" }}>
-                    <img src="/img/jubli1.jpg" style={{ width: '45%', borderRadius: '4px' }} alt="jubli" />
-                    <img src="/img/jubli2.jpg" style={{ width: '45%', borderRadius: '4px' }} alt="jubli" />
+                    <img src="/img/jubli1.webp" style={{ width: '45%', borderRadius: '4px' }} alt="jubli" />
+                    <img src="/img/jubli2.webp" style={{ width: '45%', borderRadius: '4px' }} alt="jubli" />
                   </div>
                 </div>
               }
@@ -247,7 +247,7 @@ export default function NikCoco() {
                     <li>A volunteering programme held at Pusat Perubatan Universiti Malaya, where the goal is to take care of child patients diagnosed with cancer.</li>
                     <li style={{ marginTop: '8px' }}>We played and entertained the children with board games, and made conversations with them.</li>
                   </ul>
-                  <img src="/img/cares.jpg" style={{ width: '50%', borderRadius: '4px' }} alt="cares" />
+                  <img src="/img/cares.webp" style={{ width: '50%', borderRadius: '4px' }} alt="cares" />
                 </div>
               }
             />
@@ -263,8 +263,8 @@ export default function NikCoco() {
                     <li style={{ marginTop: '8px' }}>Handled activities and sharing sessions.</li>
                   </ul>
                   <div className="center_horizontal_container" style={{ justifyContent: "center", gap: "16px" }}>
-                    <img src="/img/mmp1.jpg" style={{ width: '45%', borderRadius: '4px' }} alt="mmp" />
-                    <img src="/img/mmp2.jpg" style={{ width: '45%', borderRadius: '4px' }} alt="mmp" />
+                    <img src="/img/mmp1.webp" style={{ width: '45%', borderRadius: '4px' }} alt="mmp" />
+                    <img src="/img/mmp2.webp" style={{ width: '45%', borderRadius: '4px' }} alt="mmp" />
                   </div>
                 </div>
               }
@@ -288,8 +288,8 @@ export default function NikCoco() {
                     <li style={{ marginTop: '8px' }}>Obtained <strong>Gold Medal</strong> and <strong>Best Research Award</strong> for Review Paper Category.</li>
                   </ul>
                   <div className="center_horizontal_container" style={{ justifyContent: "center", gap: "16px" }}>
-                    <img src="/img/ifsc.jpg" style={{ width: '45%', borderRadius: '4px' }} alt="ifsc" />
-                    <img src="/img/ifsc_best.jpg" style={{ width: '45%', borderRadius: '4px' }} alt="ifsc_best" />
+                    <img src="/img/ifsc.webp" style={{ width: '45%', borderRadius: '4px' }} alt="ifsc" />
+                    <img src="/img/ifsc_best.webp" style={{ width: '45%', borderRadius: '4px' }} alt="ifsc_best" />
                   </div>
                 </div>
               }

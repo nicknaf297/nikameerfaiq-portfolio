@@ -7,19 +7,19 @@ export default function Home() {
         pageLink="/nik"
         title="ABOUT ME"
         subtitle="Get To Know Me, Contacts & Resume"
-        image="/img/nik_main.jpg"
+        image="/img/main_nik.webp"
       />
       <MainOptions
         pageLink="/photos"
         title="PHOTOS"
         subtitle="Snap. Snap. Snap."
-        image="/img/photo_main.jpg"
+        image="/img/main_photo.webp"
       />
       <MainOptions
         pageLink="/projects"
         title="PROJECTS"
         subtitle="Personal Coding Projects"
-        image="/img/project_main.png"
+        image="/img/main_project.webp"
       />
     </div>
   );
