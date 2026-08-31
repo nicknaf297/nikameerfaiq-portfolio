@@ -1,6 +1,6 @@
 'use client';
 
-import { use, useState } from 'react';
+import { use, useState, useEffect, useCallback } from 'react';
 import { motion, Variants, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 
@@ -14,121 +14,31 @@ const subGalleries: Record<string, GalleryData> = {
   concerts: {
     title: 'CONCERTS',
     description: 'Live musical performances, and stage lighting.',
-    images: [
-      '/img/photos_page/Events/Concert/1.jpg',
-      '/img/photos_page/Events/Concert/2.jpg',
-      '/img/photos_page/Events/Concert/3.jpg',
-      '/img/photos_page/Events/Concert/4.jpg',
-      '/img/photos_page/Events/Concert/5.jpg',
-      '/img/photos_page/Events/Concert/6.jpg',
-      '/img/photos_page/Events/Concert/7.jpg',
-      '/img/photos_page/Events/Concert/8.jpg',
-      '/img/photos_page/Events/Concert/9.jpg',
-      '/img/photos_page/Events/Concert/10.jpg',
-      '/img/photos_page/Events/Concert/11.jpg',
-      '/img/photos_page/Events/Concert/12.jpg',
-      '/img/photos_page/Events/Concert/13.jpg',
-      '/img/photos_page/Events/Concert/14.jpg',
-      '/img/photos_page/Events/Concert/15.jpg',
-      '/img/photos_page/Events/Concert/16.jpg',
-      '/img/photos_page/Events/Concert/17.jpg',
-      '/img/photos_page/Events/Concert/18.jpg',
-      '/img/photos_page/Events/Concert/19.jpg',
-      '/img/photos_page/Events/Concert/20.jpg',
-      '/img/photos_page/Events/Concert/21.jpg',
-      '/img/photos_page/Events/Concert/22.jpg',
-      '/img/photos_page/Events/Concert/23.jpg',
-      '/img/photos_page/Events/Concert/24.jpg',
-      '/img/photos_page/Events/Concert/25.jpg',
-      '/img/photos_page/Events/Concert/26.jpg',
-      '/img/photos_page/Events/Concert/27.jpg',
-      '/img/photos_page/Events/Concert/28.jpg',
-      '/img/photos_page/Events/Concert/29.jpg',
-      '/img/photos_page/Events/Concert/30.jpg',
-      '/img/photos_page/Events/Concert/33.jpg',
-      '/img/photos_page/Events/Concert/34.jpg',
-      '/img/photos_page/Events/Concert/35.jpg',
-      '/img/photos_page/Events/Concert/36.jpg',
-      '/img/photos_page/Events/Concert/37.jpg',
-      '/img/photos_page/Events/Concert/40.jpg',
-      '/img/photos_page/Events/Concert/41.jpg',
-      '/img/photos_page/Events/Concert/42.jpg',
-      '/img/photos_page/Events/Concert/43.jpg',
-      '/img/photos_page/Events/Concert/44.jpg',
-      '/img/photos_page/Events/Concert/46.jpg',
-      '/img/photos_page/Events/Concert/47.jpg',
-      '/img/photos_page/Events/Concert/48.jpg',
-      '/img/photos_page/Events/Concert/49.jpg',
-      '/img/photos_page/Events/Concert/50.jpg',
-      '/img/photos_page/Events/Concert/51.jpg',
-      '/img/photos_page/Events/Concert/52.jpg',
-      '/img/photos_page/Events/Concert/53.jpg',
-      '/img/photos_page/Events/Concert/54.jpg',
-      '/img/photos_page/Events/Concert/55.jpg',
-    ],
+    images: Array.from({ length: 55 }, (_, i) => `/img/photos_page/Events/Concert/${i + 1}.webp`),
   },
   weddings: {
     title: 'WEDDINGS',
     description: 'Special vows, ceremonies, and unforgettable moments.',
-    images: [
-      '/img/photos_page/Events/Weddings/1.jpg',
-      '/img/photos_page/Events/Weddings/2.jpg',
-      '/img/photos_page/Events/Weddings/5.jpg',
-      '/img/photos_page/Events/Weddings/6.jpg',
-      '/img/photos_page/Events/Weddings/7.jpg',
-      '/img/photos_page/Events/Weddings/8.jpg',
-      '/img/photos_page/Events/Weddings/9.jpg',
-      '/img/photos_page/Events/Weddings/10.jpg',
-      '/img/photos_page/Events/Weddings/11.jpg',
-      '/img/photos_page/Events/Weddings/12.jpg',
-      '/img/photos_page/Events/Weddings/13.jpg',
-    ],
+    images: [1, 2, 5, 6, 7, 8, 9, 10, 11, 12, 13].map(
+      (num) => `/img/photos_page/Events/Weddings/${num}.webp`
+    ),
   },
   graduation: {
     title: 'GRADUATION',
     description: 'Campus achievements and memorable convocation ceremonies.',
-    images: [
-      '/img/photos_page/Events/Gradutaion/4.jpg',
-      '/img/photos_page/Events/Gradutaion/1.jpg',
-      '/img/photos_page/Events/Gradutaion/3.jpg',
-      '/img/photos_page/Events/Gradutaion/5.jpg',
-      '/img/photos_page/Events/Gradutaion/6.jpg',
-      '/img/photos_page/Events/Gradutaion/7.jpg',
-      '/img/photos_page/Events/Gradutaion/8.jpg',
-      '/img/photos_page/Events/Gradutaion/2.jpg',
-    ],
+    images: [4, 1, 3, 5, 6, 7, 8, 2].map(
+      (num) => `/img/photos_page/Events/Gradutaion/${num}.webp`
+    ),
   },
   sports: {
     title: 'SPORTS',
     description: 'Action shots and high-energy games.',
-    images: [
-      '/img/photos_page/Events/Sports/4.jpg',
-      '/img/photos_page/Events/Sports/1.jpg',
-      '/img/photos_page/Events/Sports/2.jpg',
-      '/img/photos_page/Events/Sports/3.jpg',
-      '/img/photos_page/Events/Sports/5.jpg',
-      '/img/photos_page/Events/Sports/6.jpg',
-      '/img/photos_page/Events/Sports/7.jpg',
-      '/img/photos_page/Events/Sports/8.jpg',
-      '/img/photos_page/Events/Sports/9.jpg',
-      '/img/photos_page/Events/Sports/10.jpg',
-      '/img/photos_page/Events/Sports/11.jpg',
-      '/img/photos_page/Events/Sports/12.jpg',
-    ],
+    images: Array.from({ length: 12 }, (_, i) => `/img/photos_page/Events/Sports/${i + 1}.webp`),
   },
   community: {
     title: 'COMMUNITY EVENTS',
     description: 'Dinners, Programmes, Cultural Meetups.',
-    images: [
-      '/img/photos_page/Events/Community Events/1.jpg',
-      '/img/photos_page/Events/Community Events/2.jpg',
-      '/img/photos_page/Events/Community Events/3.jpg',
-      '/img/photos_page/Events/Community Events/4.JPG',
-      '/img/photos_page/Events/Community Events/5.JPG',
-      '/img/photos_page/Events/Community Events/6.JPG',
-      '/img/photos_page/Events/Community Events/7.JPG',
-      '/img/photos_page/Events/Community Events/8.JPG',
-    ],
+    images: Array.from({ length: 8 }, (_, i) => `/img/photos_page/Events/Community Events/${i + 1}.webp`),
   },
 };
 
@@ -138,7 +48,7 @@ const containerVariants: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    transition: { staggerChildren: 0.08 },
+    transition: { staggerChildren: 0.04 },
   },
 };
 
@@ -147,13 +57,13 @@ const itemVariants: Variants = {
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: smoothEase },
+    transition: { duration: 0.4, ease: smoothEase },
   },
 };
 
 export default function DynamicEventGalleryPage({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = use(params);
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   const gallery = subGalleries[resolvedParams.id] || {
     title: resolvedParams.id.toUpperCase(),
@@ -161,24 +71,42 @@ export default function DynamicEventGalleryPage({ params }: { params: Promise<{ 
     images: [],
   };
 
+  const handleNext = useCallback(() => {
+    if (selectedIndex !== null) {
+      setSelectedIndex((prev) => (prev! + 1) % gallery.images.length);
+    }
+  }, [selectedIndex, gallery.images.length]);
+
+  const handlePrev = useCallback(() => {
+    if (selectedIndex !== null) {
+      setSelectedIndex((prev) => (prev! - 1 + gallery.images.length) % gallery.images.length);
+    }
+  }, [selectedIndex, gallery.images.length]);
+
+  // Keyboard navigation (Left, Right, Escape)
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (selectedIndex === null) return;
+      if (e.key === 'ArrowRight') handleNext();
+      if (e.key === 'ArrowLeft') handlePrev();
+      if (e.key === 'Escape') setSelectedIndex(null);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedIndex, handleNext, handlePrev]);
+
   // Trigger browser image download
   const handleDownload = (imgSrc: string) => {
     const link = document.createElement('a');
     link.href = imgSrc;
-    link.download = `${resolvedParams.id}-${Date.now()}.jpg`;
+    link.download = `${resolvedParams.id}-${Date.now()}.webp`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
 
   return (
-    <div
-      style={{
-        width: '100%',
-        padding: '24px 50px 60px 50px',
-        boxSizing: 'border-box',
-      }}
-    >
+    <div style={{ width: '100%', padding: '24px 50px 60px 50px', boxSizing: 'border-box' }}>
       {/* HEADER */}
       <motion.div
         initial={{ opacity: 0, y: -15 }}
@@ -215,19 +143,15 @@ export default function DynamicEventGalleryPage({ params }: { params: Promise<{ 
         variants={containerVariants}
         initial="hidden"
         animate="show"
-        style={{
-          columnCount: 4,
-          columnGap: '20px',
-          width: '100%',
-        }}
+        style={{ columnCount: 4, columnGap: '20px', width: '100%' }}
       >
         {gallery.images.map((imgSrc, idx) => (
           <motion.div
             key={idx}
             variants={itemVariants}
             whileHover={{ y: -4 }}
-            transition={{ duration: 0.3 }}
-            onClick={() => setSelectedImage(imgSrc)}
+            transition={{ duration: 0.25 }}
+            onClick={() => setSelectedIndex(idx)}
             style={{
               breakInside: 'avoid',
               marginBottom: '20px',
@@ -240,25 +164,22 @@ export default function DynamicEventGalleryPage({ params }: { params: Promise<{ 
             <img
               src={imgSrc}
               alt={`${gallery.title} image ${idx + 1}`}
-              style={{
-                width: '100%',
-                height: 'auto',
-                display: 'block',
-              }}
+              loading="lazy"
+              style={{ width: '100%', height: 'auto', display: 'block' }}
             />
           </motion.div>
         ))}
       </motion.div>
 
-      {/* FULL-SCREEN LIGHTBOX OVERLAY */}
+      {/* LIGHTBOX OVERLAY WITH NEXT/PREV NAVIGATION */}
       <AnimatePresence>
-        {selectedImage && (
+        {selectedIndex !== null && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.25 }}
-            onClick={() => setSelectedImage(null)}
+            transition={{ duration: 0.2 }}
+            onClick={() => setSelectedIndex(null)}
             style={{
               position: 'fixed',
               inset: 0,
@@ -272,7 +193,7 @@ export default function DynamicEventGalleryPage({ params }: { params: Promise<{ 
               boxSizing: 'border-box',
             }}
           >
-            {/* ACTION CONTROLS TOP BAR */}
+            {/* TOP BAR ACTION BUTTONS */}
             <div
               style={{
                 position: 'absolute',
@@ -284,11 +205,10 @@ export default function DynamicEventGalleryPage({ params }: { params: Promise<{ 
                 zIndex: 1010,
               }}
             >
-              {/* DOWNLOAD BUTTON */}
               <button
                 onClick={(e) => {
                   e.stopPropagation();
-                  handleDownload(selectedImage);
+                  handleDownload(gallery.images[selectedIndex]);
                 }}
                 className="body_text_bold"
                 style={{
@@ -299,19 +219,15 @@ export default function DynamicEventGalleryPage({ params }: { params: Promise<{ 
                   padding: '10px 18px',
                   fontSize: '13px',
                   cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '6px',
                   letterSpacing: '0.5px',
                   fontWeight: 600,
                 }}
               >
-                <span>⬇</span> DOWNLOAD
+                ⬇ DOWNLOAD
               </button>
 
-              {/* CLOSE BUTTON */}
               <button
-                onClick={() => setSelectedImage(null)}
+                onClick={() => setSelectedIndex(null)}
                 style={{
                   background: 'rgba(255,255,255,0.1)',
                   border: 'none',
@@ -321,32 +237,75 @@ export default function DynamicEventGalleryPage({ params }: { params: Promise<{ 
                   height: '42px',
                   fontSize: '20px',
                   cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
                 }}
               >
                 ✕
               </button>
             </div>
 
-            {/* ENLARGED PHOTO DISPLAY */}
+            {/* PREVIOUS BUTTON */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                handlePrev();
+              }}
+              style={{
+                position: 'absolute',
+                left: '30px',
+                background: 'rgba(255,255,255,0.1)',
+                border: 'none',
+                color: '#fff',
+                borderRadius: '50%',
+                width: '50px',
+                height: '50px',
+                fontSize: '24px',
+                cursor: 'pointer',
+                zIndex: 1010,
+              }}
+            >
+              ‹
+            </button>
+
+            {/* ENLARGED PHOTO */}
             <motion.img
-              initial={{ scale: 0.9, opacity: 0 }}
+              key={selectedIndex}
+              initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              transition={{ duration: 0.3, ease: smoothEase }}
-              src={selectedImage}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              src={gallery.images[selectedIndex]}
               alt="Enlarged view"
               onClick={(e) => e.stopPropagation()}
               style={{
-                maxWidth: '90vw',
+                maxWidth: '85vw',
                 maxHeight: '85vh',
                 objectFit: 'contain',
                 borderRadius: '6px',
-                boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.8)',
               }}
             />
+
+            {/* NEXT BUTTON */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                handleNext();
+              }}
+              style={{
+                position: 'absolute',
+                right: '30px',
+                background: 'rgba(255,255,255,0.1)',
+                border: 'none',
+                color: '#fff',
+                borderRadius: '50%',
+                width: '50px',
+                height: '50px',
+                fontSize: '24px',
+                cursor: 'pointer',
+                zIndex: 1010,
+              }}
+            >
+              ›
+            </button>
           </motion.div>
         )}
       </AnimatePresence>

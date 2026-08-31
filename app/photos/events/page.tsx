@@ -10,11 +10,11 @@ interface SubCategory {
 }
 
 const eventSubCategories: SubCategory[] = [
-  { id: 'concerts', title: 'CONCERTS', coverImage: '/img/photos_page/events/concert_cover.jpg' },
-  { id: 'weddings', title: 'WEDDINGS', coverImage: '/img/photos_page/events/weddings_cover.jpg' },
-  { id: 'graduation', title: 'GRADUATION', coverImage: '/img/photos_page/events/graduation_cover.jpg' },
-  { id: 'sports', title: 'SPORTS', coverImage: '/img/photos_page/events/sports_cover.jpg' },
-  { id: 'community', title: 'COMMUNITY EVENTS', coverImage: '/img/photos_page/events/community_cover.jpg' },
+  { id: 'concerts', title: 'CONCERTS', coverImage: '/img/photos_page/Events/concert_cover.jpg' },
+  { id: 'weddings', title: 'WEDDINGS', coverImage: '/img/photos_page/Events/weddings_cover.jpg' },
+  { id: 'graduation', title: 'GRADUATION', coverImage: '/img/photos_page/Events/graduation_cover.jpg' },
+  { id: 'sports', title: 'SPORTS', coverImage: '/img/photos_page/Events/sports_cover.jpg' },
+  { id: 'community', title: 'COMMUNITY EVENTS', coverImage: '/img/photos_page/Events/community_cover.jpg' },
 ];
 
 const smoothEase = [0.4, 0.4, 0.6, 1] as const;
