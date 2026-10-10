@@ -58,6 +58,7 @@ export default function PhotoViewDesktop() {
   };
 
   useEffect(() => {
+    // 🔧 FIX: Refined threshold & rootMargin so the active dot highlights when panel enters upper half of viewport
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -69,7 +70,11 @@ export default function PhotoViewDesktop() {
           }
         });
       },
-      { threshold: 0.6 }
+      {
+        root: null, // Observes window viewport
+        rootMargin: '-20% 0px -40% 0px', // Creates a focused vertical trigger zone in mid-screen
+        threshold: 0.2, // Lower threshold ensures observers fire reliably across display scales
+      }
     );
 
     panelRefs.current.forEach((ref) => {
@@ -82,7 +87,7 @@ export default function PhotoViewDesktop() {
   const scrollToPanel = (index: number) => {
     panelRefs.current[index]?.scrollIntoView({
       behavior: 'smooth',
-      block: 'start',
+      block: 'center',
     });
   };
 
@@ -201,6 +206,7 @@ export default function PhotoViewDesktop() {
         </main>
       </div>
 
+      {/* FLOATING DOT NAVIGATION */}
       <motion.nav
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

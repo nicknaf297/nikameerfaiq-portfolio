@@ -61,27 +61,60 @@ export default function PhotoViewMobile() {
         gap: '24px',
       }}
     >
-      {/* PROFILE HEADER AT TOP */}
       <motion.div
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         style={{
           background: '#fff',
           borderRadius: '8px',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center', /* Centers the scaled image */
-          gap: '12px',
+          padding: '12px 0px',
+          display: 'grid',
+          gridTemplateColumns: '1fr 180px',
+          gap: '16px',
+          alignItems: 'center',
           width: '100%',
+          boxSizing: 'border-box',
         }}
       >
-        {/* SCALED DOWN CONTAINER PRESERVING ORIGINAL ASPECT RATIO */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+          <p 
+            className="body_text" 
+            style={{ 
+              fontSize: '12px', 
+              lineHeight: '1.4', 
+              color: '#334155', 
+              margin: 0 
+            }}
+          >
+            Beyond computer science, photography is a big passion. It is my medium for capturing moments, and preserving memories I aspire to keep forever.
+          </p>
+
+          <div
+            style={{
+              borderTop: '1px solid #e2e8f0',
+              paddingTop: '6px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '3px',
+            }}
+          >
+            <div className="body_text" style={{ fontSize: '11px', color: '#6b7280' }}>
+              📍 Based in Selangor, Malaysia
+            </div>
+            <div className="body_text" style={{ fontSize: '11px', color: '#6b7280' }}>
+              📷 Gear: Fujifilm XT30ii, Canon D5000
+            </div>
+          </div>
+        </div>
+
         <div
           style={{
-            width: '100%',
-            maxWidth: '240px', /* Controls smaller width while retaining natural height ratio */
-            borderRadius: '8px',
+            width: '180px',
+            aspectRatio: '4 / 5',
+            borderRadius: '6px',
             overflow: 'hidden',
+            backgroundColor: '#111',
+            justifySelf: 'end',
           }}
         >
           <img
@@ -89,41 +122,12 @@ export default function PhotoViewMobile() {
             alt="Nik Ameer Faiq Photography"
             style={{
               width: '100%',
-              height: 'auto', /* Retains original proportions without cropping */
+              height: '100%',
+              objectFit: 'cover',
+              transform: 'scale(1.2)',
               display: 'block',
             }}
           />
-        </div>
-
-        <p 
-          className="body_text" 
-          style={{ 
-            fontSize: '13px', 
-            lineHeight: '1.5', 
-            color: '#334155', 
-            margin: 0, 
-            width: '100%' 
-          }}
-        >
-          Beyond computer science, photography is a big passion. It is my medium for capturing moments, and preserving memories I aspire to keep forever.
-        </p>
-
-        <div
-          style={{
-            borderTop: '1px solid #e2e8f0',
-            paddingTop: '8px',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '4px',
-            width: '100%',
-          }}
-        >
-          <div className="body_text" style={{ fontSize: '12px', color: '#6b7280' }}>
-            📍 Based in Selangor, Malaysia
-          </div>
-          <div className="body_text" style={{ fontSize: '12px', color: '#6b7280' }}>
-            📷 Gear: Fujifilm XT30ii, Canon D5000
-          </div>
         </div>
       </motion.div>
 
