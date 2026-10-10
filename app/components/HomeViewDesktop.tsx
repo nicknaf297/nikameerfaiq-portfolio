@@ -1,4 +1,4 @@
-import MainOptions from '@/app/components/MainOptions'
+import MainOptions from '@/app/components/MainOptionsDesktop'
 
 export default function Home() {
   return (
