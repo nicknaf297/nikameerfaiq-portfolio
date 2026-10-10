@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-function MainOptions({ pageLink, title, subtitle, image }) {
+export default function MainOptionsDesktop({ pageLink, title, subtitle, image }) {
   return (
     <Link href={pageLink} className="mainoptions">
       <img src={image} alt={title} className="option-bg-img" />
@@ -12,5 +12,3 @@ function MainOptions({ pageLink, title, subtitle, image }) {
     </Link>
   );
 }
-
-export default MainOptions;

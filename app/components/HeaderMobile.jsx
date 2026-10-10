@@ -4,15 +4,18 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
+import LogoMobile from '@/app/components/LogoMobile';
 
 export default function HeaderMobile() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
+  // Close menu on page change
   useEffect(() => {
     setIsOpen(false);
   }, [pathname]);
 
+  // Prevent background scroll when mobile menu overlay is open
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : 'unset';
   }, [isOpen]);
@@ -20,10 +23,8 @@ export default function HeaderMobile() {
   return (
     <header className="mobile-header-root">
       <div className="mobile-bar">
-        {/* LOGO USING CHAKRA PETCH */}
-        <Link href="/" className="mobile-logo" onClick={() => setIsOpen(false)}>
-          NIK.
-        </Link>
+        {/* STATIC MOBILE LOGO COMPONENT */}
+        <LogoMobile />
 
         {/* HAMBURGER TOGGLE */}
         <button
@@ -108,16 +109,6 @@ export default function HeaderMobile() {
           box-sizing: border-box;
         }
 
-        .mobile-logo {
-          font-family: var(--font-cp-bold), sans-serif;
-          font-size: 22px;
-          font-weight: 900;
-          color: #d6336c;
-          text-decoration: none;
-          letter-spacing: 1px;
-          z-index: 101;
-        }
-
         .hamburger-btn {
           display: flex;
           flex-direction: column;
@@ -159,19 +150,18 @@ export default function HeaderMobile() {
           width: 100%;
         }
 
-        /* FORCED VISIBLE TEXT COLOR AND FONT FAMILY */
         .mobile-nav-link {
           font-family: var(--font-cp-bold), sans-serif !important;
           font-size: 22px;
           font-weight: 700;
-          color: #1e293b !important; /* Forces dark gray so unselected links show up */
+          color: #1e293b !important;
           text-decoration: none;
           letter-spacing: 0.5px;
           transition: color 0.2s ease;
         }
 
         .mobile-nav-link.active {
-          color: #d6336c !important; /* Accent pink matching active state */
+          color: #d6336c !important;
         }
 
         .mobile-contact-btn {
