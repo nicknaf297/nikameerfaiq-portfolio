@@ -12,24 +12,49 @@ interface ProjectCategory {
 
 const projectsList: ProjectCategory[] = [
   { 
-    id: 'python-desktop-utility', 
-    title: 'PYTHON DESKTOP UTILITY', 
-    coverImage: '/img/projects_page/utility_cover.webp' 
+    id: 'wallet', 
+    title: 'PERSONAL WALLET APP', 
+    coverImage: '/img/projects_page/wallet_cover.webp' 
   },
   { 
-    id: 'biodiversity-dashboard', 
-    title: 'BIODIVERSITY DASHBOARD', 
-    coverImage: '/img/projects_page/dashboard_cover.webp' 
-  },
-  { 
-    id: 'esg-application', 
-    title: 'ESG APPLICATION MODULES', 
-    coverImage: '/img/projects_page/esg_cover.webp' 
-  },
-  { 
-    id: 'portfolio-website', 
+    id: 'portfolio', 
     title: 'PORTFOLIO WEBSITE', 
     coverImage: '/img/projects_page/portfolio_cover.webp' 
+  },
+  { 
+    id: 'malware', 
+    title: 'AI BASED MALWARE CLASSIFICATION SYSTEM', 
+    coverImage: '/img/projects_page/malware_cover.webp' 
+  },
+  { 
+    id: 'digital-forensic', 
+    title: 'DIGITAL FORENSIC ANALYSIS', 
+    coverImage: '/img/projects_page/digital_forensic_cover.webp' 
+  },
+  { 
+    id: 'campus-network', 
+    title: 'CAMPUS NETWORK DESIGN', 
+    coverImage: '/img/projects_page/campus_network_cover.webp' 
+  },
+  {
+    id: 'music', 
+    title: 'MUSIC APP', 
+    coverImage: '/img/projects_page/music_cover.webp' 
+  },
+  { 
+    id: 'hdr', 
+    title: 'RADIOTHERAPY BACHYTHERAPY CALCULATOR', 
+    coverImage: '/img/projects_page/hdr_cover.webp' 
+  },
+  { 
+    id: 'chess', 
+    title: 'KWAZAM CHESS', 
+    coverImage: '/img/projects_page/chess_cover.webp' 
+  },
+  { 
+    id: 'srt', 
+    title: 'SRT PROCESS SCHEDULING', 
+    coverImage: '/img/projects_page/srt_cover.webp' 
   },
 ];
 
