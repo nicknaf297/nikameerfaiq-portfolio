@@ -69,6 +69,7 @@ export default function EventsViewDesktop() {
           gap: '20px',
           width: '100%',
           flexGrow: 1,
+          marginTop: '16px',
         }}
       >
         {eventSubCategories.map((sub) => (
