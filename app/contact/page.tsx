@@ -60,8 +60,8 @@ export default function ContactPage() {
     {
       id: 'github',
       label: 'GitHub',
-      handle: 'nikameerfaiq',
-      href: 'https://github.com/nikameerfaiq',
+      handle: 'nicknaf297',
+      href: 'https://github.com/nicknaf297',
       icon: faGithub,
     },
   ];
